@@ -1,0 +1,58 @@
+thead td {
+    font-weight: bold;
+}
+
+body {
+    padding-top: 1em;
+}
+
+td.hash-result {
+    font-family: monospace;
+}
+td.hash-method {
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+input[type=text] {
+    width:100%;
+    min-height: 1.5em;
+    line-height: 2em;
+
+}
+#compute {
+
+    display: block;
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    line-height: 3em;
+    height: 3em;
+    display: inline-block;;
+    vertical-align: middle;
+}
+
+input[type="checkbox"] + label:before {
+    width: 2em;
+    height: 2em;
+    color: red;
+    font-size: 3em;
+    content: '✘';
+    vertical-align: bottom;
+}
+
+input[type="checkbox"]:checked + label:before {
+    color: green;
+    content: '✔';
+}
