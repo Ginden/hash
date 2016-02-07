@@ -12,6 +12,9 @@ const inputOnChange = function (e) {
     (function next(i, render, results) {
         if (i >= hashes.length) render(results);
         const hashMethod = hashes[i];
+        if (hashMethod === undefined) {
+            console.warn(e, hashes, i);
+        }
         hashMethod.digest(input.value, function (err, result) {
             if (err) throw err;
             results.push({
