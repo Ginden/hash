@@ -50,8 +50,8 @@ hashes.push({
             }
             Promise.resolve(stringToBuffer(str)).then(function(buffer) {
                 var ret = [].map.call(buffer, function(number) {
-                    return ['00', number.toString(16).toUpperCase()].join('').slice(-2);
-                }).join(':');
+                    return ['00', number.toString(16)].join('').slice(-2);
+                }).join(':').toUpperCase();
                 if (cut) {
                     ret += '...';
                 }
@@ -63,10 +63,13 @@ hashes.push({
         name:   'MD5',
         digest: function (str, done) {
             Promise.resolve(md5(str)).then(function (res) {
-                done(null, res);
+                done(null, res.toUpperCase());
             }).catch(done);
         }
     });
+
+
+
 hashes.push.apply(hashes,
     ['SHA-1', 'SHA-256', 'SHA-384', 'SHA-512'].map(function (hashName) {
         return {
@@ -114,7 +117,7 @@ const render = (function(){
                 tr.appendChild(hashMethod);
                 tr.appendChild(hashResult);
                 tbody.appendChild(tr);
-            })
+            });
         } else {
             results.forEach(function(el) {
                 hashCache[el.name].textContent = el.result;
@@ -142,8 +145,8 @@ function hex(buffer) {
         var stringValue = value.toString(16);
         // We use concatenation and slice for padding
         var padding = '00000000';
-        var paddedValue = (padding + stringValue).slice(-padding.length)
-        hexCodes.push(paddedValue);
+        var paddedValue = (padding + stringValue).slice(-padding.length);
+        hexCodes.push(paddedValue.toUpperCase());
     }
 
     // Join all the hex strings into one
