@@ -5,18 +5,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" content="Simple site that allows you to paste text and just see hashed output">
-    <title>Hash online</title>
+    <meta name="Description" content="Simple application that allows you to paste text and just see hashed output">
+    <title>Hash in browser</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+<a href="https://github.com/ginden/hash">
+    <img style="position: absolute; top: 0; left: 0; border: 0;"
+         src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67"
+         alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png">
+</a>
 <div class="container theme-showcase">
-    <h2>Hashing can be simple</h2>
-
+    <h2><a style="color: black" href="https://ginden.github.io/hash/">Hashing can be simple</a></h2>
+    <p>To protect your privacy all operations are performed on the browser side. <a href="https://github.com/ginden/hash">Site source code is available</a> under the MIT license.</p>
     <input type="text" id="input" placeholder="just type or paste it">
     <input type="checkbox" id="auto" checked><label for="auto">Calculate as you type</label>
     <button type="button" id="compute" class="btn btn-lg btn-primary">calculate hash</button>
@@ -32,7 +36,22 @@
 
         </tbody>
     </table>
-    <div class="timing">Hashing time: <span id="timing"></span>ms (<span id="ops-per-sec"></span> operations per second)</div>
+    <div class="timing" title="Hashing time can be overestimated due to asynchronicity of operations">Hashing time: <span id="timing"></span>ms (<span id="ops-per-sec"></span> operations per second)</div>
+    <div class="learn-more">
+        <h2>Learn more</h2>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/MD5">Wikipedia article on MD5</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/SHA-1">Wikipedia article on SHA-1</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/SHA-2">Wikipedia article on SHA-2 hash function family</a> (SHA-256, SHA-384, SHA-512)</li>
+            <li><a href="https://en.wikipedia.org/wiki/Whirlpool_%28cryptography%29">Wikipedia article on Whirlpool hash</a></li>
+            <li><a href="http://www.sunsean.com/Whirlpool.html">Whirlpool implementation used on this page</a></li>
+            <li><a href="https://github.com/blueimp/JavaScript-MD5">MD5 implementation used on this page</a></li>
+            <li><a href="https://dvcs.w3.org/hg/webcrypto-api/raw-file/tip/spec/Overview.html">Web cryptography specification</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto">MDN on SubtleCrypto interface</a></li>
+            <li><a href="http://security.stackexchange.com/q/19906/69263">Is MD5 considered insecure</a>? Yes, it is.</li>
+            <li><a href="http://arstechnica.com/security/2012/10/sha1-crypto-algorithm-could-fall-by-2018/">SHA1 crypto algorithm underpinning Internet security could fall by 2018</a></li>
+        </ul>
+    </div>
 </div>
 <script src="md5.js" defer></script>
 <script src="whirlpool.js" defer></script>
